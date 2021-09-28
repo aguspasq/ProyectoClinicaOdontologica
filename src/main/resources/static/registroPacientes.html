@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./styles/registroPacientes.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lora:400,700|Montserrat:300"
+      rel="stylesheet"
+    />
+    <title>Clinica Odontologica</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="superior">
+            <p>Sistema de Gestión- Clínica Odontologica</p>
+          </div>
+          <div class="inferior">
+              <h2><a href="/index.html">Clinica Odontologica</a></h2>
+          <ul class="menu">
+              <li class="seccion"><a href="listarPacientes.html">Pacientes</a></li>     
+              <li class="seccion"><a href="listarOdontologos.html">Odontologos</a></li>
+              <li class="seccion"><a href="listarTurnos.html">Turnos</a></li>
+          </ul>
+          </div>
+      </nav>
+    </header>
+    <main>
+        <div class="container">
+            <h2>Registro Nuevos Pacientes</h2>
+            <div class="box">
+              <form id="form">
+                <div>
+                  <input
+                    type="text"
+                    name="nombre"
+                    class="nombre"
+                    required
+                    placeholder=" "
+                  />
+                  <label>Nombre:</label>
+                </div>
+                <div>
+                  <input type="text" name="" class="apellido" required placeholder=" " />
+                  <label>Apellido:</label>
+                </div>
+                <div>
+                  <input
+                    type="number"
+                    name="dni"
+                    class="dni"
+                    required
+                    placeholder=" "
+                  />
+                  <label>DNI: </label>
+                </div>
+                <h3>Domicilio</h3>
+                <div>
+                  <input
+                    type="text"
+                    name="calle"
+                    class="calle"
+                    required
+                    placeholder=" "
+                  />
+                  <label>Calle:</label>
+                </div>
+                <div>
+                  <input
+                    type="number"
+                    name="numero"
+                    class="numero"
+                    required
+                    placeholder=" "
+                  />
+                  <label>Número: </label>
+                </div>
+                <div>
+                  <input
+                    type="text"
+                    name="localidad"
+                    class="localidad"
+                    required
+                    placeholder=" "
+                  />
+                  <label>Localidad:</label>
+                </div>
+                <div>
+                  <input
+                    type="text"
+                    name="provincia"
+                    class="provincia"
+                    required
+                    placeholder=" "
+                  />
+                  <label>Provincia:</label>
+                </div>
+                <input id="submit" type="submit" value="Registrar" />
+              </form>
+              <h5 class="mensaje">Paciente registrado con éxito</h5>
+            </div>
+        </div>    
+    </main>
+    <footer>
+      <div class="menu-footer">
+        <ul class="menu-ul">
+          <h4>Odontólogos</h4>
+          <li><a href="./registroOdontolgos.html">Registrar</a></li>
+          <li><a href="./buscarOdontologo.html">Buscar por ID</a></li>
+          <li><a href="#">Modificar</a></li>
+        </ul>
+        <ul class="menu-ul">
+          <h4>Pacientes</h4>
+          <li><a href="./registroPacientes.html">Registrar</a></li>
+          <li><a href="./buscarPaciente.html">Buscar por ID</a></li>
+          <li><a href="#">Modificar</a></li>
+        </ul>
+        <ul class="menu-ul">
+          <h4>Turnos</h4>
+          <li><a href="./registroTurno.html">Registrar</a></li>
+          <li><a href="./buscarTurno.html">Buscar por ID</a></li>
+          <li><a href="#">Modificar</a></li>
+        </ul>
+      </div>
+      <h6>Clinica Odontologica - BackEnd Digital House</h6>
+    </footer>
+    <script src="/scripts/registroPacientes.js"></script>
+  </body>
+</html>
