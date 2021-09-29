@@ -3,7 +3,7 @@ package com.dh.ClinicaOdontologica;
 import com.dh.ClinicaOdontologica.model.Domicilio;
 import com.dh.ClinicaOdontologica.model.Odontologo;
 import com.dh.ClinicaOdontologica.model.Paciente;
-import com.dh.ClinicaOdontologica.service.impl.OdontologoServiceImpl;
+import com.dh.ClinicaOdontologica.model.Turno;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
@@ -17,19 +17,14 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
-
-import static org.mockito.Mockito.doNothing;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
-import static org.springframework.web.servlet.function.RequestPredicates.contentType;
 
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc(addFilters = false)
-class OdontologoIntegracionTests {
+class TurnoIntegracionTests {
 
 	@Autowired
 	private MockMvc mockMvc;
@@ -44,14 +39,42 @@ class OdontologoIntegracionTests {
 
 	@Test
 	@WithMockUser(roles = "ADMIN")
-	public void registrarOdontologo() throws Exception {
+	public void registrarTurno() throws Exception {
 		Odontologo od = new Odontologo();
 		od.setNombre("Agustina");
 		od.setMatricula(134);
 		od.setApellido("Pasqualis");
-		MvcResult response = this.mockMvc.perform(MockMvcRequestBuilders.post("/odontologos/registrar")
+		od.setId(1L);
+		Paciente paciente = new Paciente();
+		Domicilio domicilio= new Domicilio();
+		domicilio.setCalle("Buenos Aires");
+		domicilio.setNumero("1255");
+		domicilio.setLocalidad("Cördoba");
+		domicilio.setProvincia("Cördoba");
+		paciente.setNombre("Marcelo");
+		paciente.setApellido("Lopez");
+		paciente.setDni("321552265");
+		paciente.setDomicilio(domicilio);
+		paciente.setId(1L);
+		Turno turno = new Turno();
+		turno.setPaciente(paciente);
+		turno.setOdontologo(od);
+
+		this.mockMvc.perform(MockMvcRequestBuilders.post("/pacientes/registrar")
+				.contentType(MediaType.APPLICATION_JSON)
+				.content(asJsonString(paciente)))
+				.andDo(MockMvcResultHandlers.print())
+				.andExpect(MockMvcResultMatchers.status().isOk()).andReturn();
+
+		this.mockMvc.perform(MockMvcRequestBuilders.post("/odontologos/registrar")
 				.contentType(MediaType.APPLICATION_JSON)
 				.content(asJsonString(od)))
+				.andDo(MockMvcResultHandlers.print())
+				.andExpect(MockMvcResultMatchers.status().isOk()).andReturn();
+
+		MvcResult response = this.mockMvc.perform(MockMvcRequestBuilders.post("/turnos/registrar")
+				.contentType(MediaType.APPLICATION_JSON)
+				.content(asJsonString(turno)))
 				.andDo(MockMvcResultHandlers.print())
 				.andExpect(MockMvcResultMatchers.status().isOk()).andReturn();
 
@@ -60,8 +83,8 @@ class OdontologoIntegracionTests {
 
 	@Test
 	@WithMockUser(roles = "ADMIN")
-	public void listarOdontologos() throws Exception {
-		MvcResult response = this.mockMvc.perform(MockMvcRequestBuilders.get("/odontologos/")
+	public void listarTurnos() throws Exception {
+		MvcResult response = this.mockMvc.perform(MockMvcRequestBuilders.get("/pacientes/")
 				.accept(MediaType.APPLICATION_JSON))
 				.andDo(MockMvcResultHandlers.print())
 				.andExpect(MockMvcResultMatchers.status().isOk()).andReturn();
@@ -72,8 +95,8 @@ class OdontologoIntegracionTests {
 
 	@Test
 	@WithMockUser(roles = "ADMIN")
-	public void borrarOdontologo() throws Exception {
-		mockMvc.perform(MockMvcRequestBuilders.delete("/odontologos/1")).andExpect(MockMvcResultMatchers
+	public void borrarTurno() throws Exception {
+		mockMvc.perform(MockMvcRequestBuilders.delete("/turnos/1")).andExpect(MockMvcResultMatchers
 				.status().is2xxSuccessful());
 	}
 

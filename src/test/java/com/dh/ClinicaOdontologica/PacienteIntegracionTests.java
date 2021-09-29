@@ -71,6 +71,13 @@ class PacienteIntegracionTests {
 
 	}
 
+	@Test
+	@WithMockUser(roles = "ADMIN")
+	public void borrarPaciente() throws Exception {
+		mockMvc.perform(MockMvcRequestBuilders.delete("/pacientes/1")).andExpect(MockMvcResultMatchers
+				.status().is2xxSuccessful());
+	}
+
 
 }
 
