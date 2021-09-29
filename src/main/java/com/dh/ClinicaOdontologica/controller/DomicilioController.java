@@ -52,10 +52,10 @@ public class DomicilioController {
         if (domicilioService.buscarPorId(id).isPresent()) {
             domicilioService.eliminar(id);
             response = ResponseEntity.status(HttpStatus.OK).body("Eliminado");
-            log.debug("Eliminando Odontologo");
+            log.debug("Eliminando Domicilio");
         } else {
             response = ResponseEntity.status(HttpStatus.NOT_FOUND).body("Registro no encontrado");
-            log.debug("Odontologo no encontrado");
+            log.debug("Domicilio no encontrado");
         }
 
         return response;
@@ -63,7 +63,7 @@ public class DomicilioController {
 
     @GetMapping
     public ResponseEntity<List<Domicilio>> buscarTodos() {
-        log.debug("Listando todos los Domicilio.");
+        log.debug("Listando todos los Domicilios.");
         return ResponseEntity.ok(domicilioService.listar());
 
     }
