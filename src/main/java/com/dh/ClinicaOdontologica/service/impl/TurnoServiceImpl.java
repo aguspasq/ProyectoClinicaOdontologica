@@ -5,6 +5,7 @@ import com.dh.ClinicaOdontologica.repository.TurnoRepository;
 import com.dh.ClinicaOdontologica.service.IService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -16,6 +17,7 @@ public class TurnoServiceImpl implements IService<Turno> {
     private TurnoRepository turnoRepository;
 
     @Override
+    @Transactional(readOnly = true)
     public List<Turno> listar() {
         return turnoRepository.findAll();
     }
@@ -32,6 +34,7 @@ public class TurnoServiceImpl implements IService<Turno> {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public Optional<Turno> buscarPorId(Long id) {
         return turnoRepository.findById(id);
     }
