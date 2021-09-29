@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,12 +23,14 @@ public class PacienteController {
     private PacienteServiceImpl pacienteService;
 
     @PostMapping("/registrar")
+    @Transactional
     public ResponseEntity<Paciente> registrarPaciente(@RequestBody Paciente paciente) {
         log.debug("Registrando Paciente al Sistema.");
         return ResponseEntity.ok(pacienteService.guardar(paciente));
     }
 
     @GetMapping("/{id}")
+    @Transactional(readOnly = true)
     public ResponseEntity<Paciente> buscar(@PathVariable Long id) {
         Paciente paciente = pacienteService.buscarPorId(id).orElse(null);
         log.debug("Buscando Paciente por Id.");
@@ -35,6 +38,7 @@ public class PacienteController {
     }
 
     @PutMapping("/{id}")
+    @Transactional
     public ResponseEntity<Paciente> actualizar(@RequestBody Paciente paciente) {
         ResponseEntity<Paciente> response = null;
 
@@ -48,6 +52,7 @@ public class PacienteController {
     }
 
     @DeleteMapping("/{id}")
+    @Transactional
     public ResponseEntity<String> eliminar(@PathVariable Long id) {
         ResponseEntity<String> response = null;
 
@@ -63,10 +68,16 @@ public class PacienteController {
     }
 
     @GetMapping
+    @Transactional(readOnly = true)
     public ResponseEntity<List<Paciente>> buscarTodos() {
         log.debug("Listando todos los Pacientes.");
         return ResponseEntity.ok(pacienteService.listar());
     }
 
+    @GetMapping("buscar/{apellido}")
+    public ResponseEntity<List<Paciente>> buscarPorApellido(@PathVariable String apellido) {
+       log.debug("Listando pacientes por apellido.");
+       return ResponseEntity.ok(pacienteService.buscarPacienteByApellido(apellido));
+    }
 
 }

@@ -111,6 +111,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     margin-top: 150px;
+    min-height: 300px;
   }
 
   .container {

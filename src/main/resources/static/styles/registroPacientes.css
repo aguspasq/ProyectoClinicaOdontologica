@@ -108,6 +108,7 @@ button:hover{
 
 main {
   margin-top: 150px;
+  min-height: 300px;
 }
 
 .container {

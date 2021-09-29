@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,12 +21,14 @@ public class OdontologoController {
     private OdontologoServiceImpl odontologoService;
 
     @PostMapping("/registrar")
+    @Transactional
     public ResponseEntity<Odontologo> registrarOdontologo(@RequestBody Odontologo odontologo) {
         log.debug("Registrando Odontologo al Sistema.");
         return ResponseEntity.ok(odontologoService.guardar(odontologo));
     }
 
     @GetMapping("/{id}")
+    @Transactional(readOnly = true)
     public ResponseEntity<Odontologo> buscar(@PathVariable Long id) {
         Odontologo odontologo = odontologoService.buscarPorId(id).orElse(null);
         log.debug("Buscando Odontologo por Id.");
@@ -33,6 +36,7 @@ public class OdontologoController {
     }
 
     @PutMapping("/{id}")
+    @Transactional
     public ResponseEntity<Odontologo> actualizar(@RequestBody Odontologo odontologo) {
         ResponseEntity<Odontologo> response = null;
 
@@ -46,6 +50,7 @@ public class OdontologoController {
     }
 
     @DeleteMapping("/{id}")
+    @Transactional
     public ResponseEntity<String> eliminar(@PathVariable Long id) {
         ResponseEntity<String> response = null;
 
@@ -62,6 +67,7 @@ public class OdontologoController {
     }
 
     @GetMapping
+    @Transactional(readOnly = true)
     public ResponseEntity<List<Odontologo>> buscarTodos() {
         log.debug("Listando todos los Odontologos.");
         return ResponseEntity.ok(odontologoService.listar());
