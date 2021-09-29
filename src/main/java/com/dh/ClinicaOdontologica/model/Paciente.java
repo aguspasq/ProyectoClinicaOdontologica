@@ -28,7 +28,7 @@ public class Paciente implements Serializable {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_domicilio", referencedColumnName = "id")
     private Domicilio domicilio;
-    @OneToMany(mappedBy = "paciente", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "paciente", cascade = CascadeType.ALL, orphanRemoval = false)
     @JsonIgnore
     private Set<Turno> turnos;
 

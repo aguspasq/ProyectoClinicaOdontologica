@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="./styles/listarOdontologos.css" rel="stylesheet" />
+  <link href="./styles/modificarOdontologos.css" rel="stylesheet" />
   <link
           href="https://fonts.googleapis.com/css?family=Lora:400,700|Montserrat:300"
           rel="stylesheet"
@@ -20,25 +20,60 @@
     <div class="inferior">
       <h2><a href="/index.html">Clinica Odontologica</a></h2>
       <ul class="menu">
-        <li class="seccion"><a href="listarPacientes.html">Pacientes</a></li>
-        <li class="seccion"><a href="listarOdontologos.html">Odontologos</a></li>
+        <li class="seccion">
+          <a href="listarPacientes.html">Pacientes</a>
+        </li>
+        <li class="seccion">
+          <a href="listarOdontologos.html">Odontologos</a>
+        </li>
         <li class="seccion"><a href="listarTurnos.html">Turnos</a></li>
       </ul>
     </div>
   </nav>
 </header>
 <main>
+  <div class="menuLateral">
+    <h3>Menu</h3>
+    <h5>Buscar por Id</h5>
+    <form class="formBuscar">
+      <input type="text" class="Id"/>
+      <h6 class="mensajeb">Odontologo no encontrado</h6>
+      <input type="submit" id="buscar" class="buscar" value="Buscar">
+    </form>
+  </div>
   <div class="container">
-    <h2>Odontologos Disponibles</h2>
-    <ul class="responsive-table">
-      <li class="table-header">
-        <div class="col col-1">Id</div>
-        <div class="col col-2">Matricula</div>
-        <div class="col col-3">Nombre</div>
-        <div class="col col-4">Apellido</div>
-        <div class="col col-5">Eliminar</div>
-      </li>
-    </ul>
+    <h2>Modificar Odontologos</h2>
+    <h3>Buscar por Id Para obtener los datos registrados.</h3>
+    <div class="box">
+      <form class="form">
+        <div>
+          <input
+                  type="number"
+                  name="matricula"
+                  class="matricula"
+                  required
+                  placeholder=" "
+          />
+          <label>Matricula: </label>
+        </div>
+        <div>
+          <input
+                  type="text"
+                  name="nombre"
+                  class="nombre"
+                  required
+                  placeholder=" "
+          />
+          <label>Nombre:</label>
+        </div>
+        <div>
+          <input type="text" name="" class="apellido" required placeholder=" " />
+          <label>Apellido:</label>
+        </div>
+        <input id="submit" type="submit" value="Registrar" />
+      </form>
+      <h5 class="mensaje">Odontologo modificado con éxito</h5>
+    </div>
   </div>
 </main>
 <footer>
@@ -64,6 +99,6 @@
   </div>
   <h6>Clinica Odontologica - BackEnd Digital House</h6>
 </footer>
-<script src="/scripts/listarOdontologos.js"></script>
+<script src="/scripts/modificarOdontologo.js"></script>
 </body>
 </html>

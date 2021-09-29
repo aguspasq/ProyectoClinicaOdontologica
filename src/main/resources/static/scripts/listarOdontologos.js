@@ -19,18 +19,19 @@ window.onload = function () {
       });
     })
     .catch(function (error) {
-    
+
         console.log(error);
     });
 };
 
 
-setTimeout(function(){ 
+setTimeout(function(){
 
     let botonesBorrar = document.getElementsByClassName("eliminar");
     for (let i = 0; i < botonesBorrar.length; i++){
 
         botonesBorrar[i].addEventListener("click", eliminarItem);
+        botonesBorrrar[i].addEventListener("click", modificarItem)
     }
 
     function eliminarItem(){
@@ -40,7 +41,7 @@ setTimeout(function(){
 
         if(confirmacion){
         fetch(`http://localhost:8081/odontologos/${id}`,{
-            
+
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'
@@ -51,10 +52,11 @@ setTimeout(function(){
         }
     }
 
+
 }, 2000);
 
 
-    
+
 
 
 

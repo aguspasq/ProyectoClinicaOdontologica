@@ -20,7 +20,7 @@ public class Odontologo implements Serializable {
     private String nombre;
     private String apellido;
     private Integer matricula;
-    @OneToMany(mappedBy = "odontologo", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "odontologo", cascade = CascadeType.ALL, orphanRemoval = false)
     @JsonIgnore
     private Set<Turno> turnos;
 }
