@@ -56,9 +56,7 @@ window.onload = function () {
                           }
                           eliminarItem();
                         }
-                
                     )
-
 
       })
       .catch(function (error) {

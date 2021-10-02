@@ -2,8 +2,8 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <link href="./styles/index.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Montserrat:300" rel="stylesheet">
     <title>Clinica Odontologica</title>
@@ -17,6 +17,7 @@
         <div class="inferior">
             <h2><a href="/index.html">Clinica Odontologica</a></h2>
             <ul class="menu">
+                <li class="seccion"><a href="logout">Salir</a></li>
                 <li class="seccion"><a href="listarPacientes.html">Pacientes</a></li>
                 <li class="seccion"><a href="listarOdontologos.html">Odontologos</a></li>
                 <li class="seccion"><a href="listarTurnos.html">Turnos</a></li>
@@ -25,15 +26,8 @@
     </nav>
 </header>
 <main>
-    <div id="menuPaciente">
-        <ul class="menu-pac">
-            <li><a href="./listarPacientes.html">Ver Registro</a></li>
-            <li><a href="./registroPacientes.html">Registrar</a></li>
-            <li><a href="./buscarPaciente.html">Buscar por ID</a></li>
-            <li><a href="#">Modificar</a></li>
-        </ul>
-    </div>
-    <video id="background-video" autoplay loop muted poster="https://image.freepik.com/free-photo/male-professional-dentist-with-gloves-mask-discuss-what-treatment-will-look-like-patient-s-teeth_158595-7630.jpg">
+    <video autoplay id="background-video" loop muted
+           poster="https://image.freepik.com/free-photo/male-professional-dentist-with-gloves-mask-discuss-what-treatment-will-look-like-patient-s-teeth_158595-7630.jpg">
         <source src="/resources/production ID_4489831.mp4" type="video/mp4">
     </video>
     <h1>Clinica Odontologica</h1>
@@ -50,7 +44,7 @@
         <ul class="menu-ul">
             <h4>Pacientes</h4>
             <li><a href="./registroPacientes.html">Registrar</a></li>
-            <li><a href="./buscarPaciente.html">Buscar por ID</a></li>
+            <li><a href="./buscarPaciente.html">Buscar por Apellido</a></li>
             <li><a href="./modificarPacientes.html">Modificar</a></li>
         </ul>
         <ul class="menu-ul">

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8"/>
-    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <link href="./styles/buscarTurno.css" rel="stylesheet"/>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./styles/error.css" rel="stylesheet" />
     <link
             href="https://fonts.googleapis.com/css?family=Lora:400,700|Montserrat:300"
             rel="stylesheet"
@@ -30,26 +30,7 @@
 </header>
 <main>
     <div class="container">
-        <div class="menuLateral">
-            <h2>Menu</h2>
-            <h5>Buscar por Id</h5>
-            <form>
-                <input class="Id" type="text"/>
-                <h6 class="mensaje">Turno no encontrado</h6>
-                <input class="buscar" id="buscar" type="submit" value="Buscar">
-            </form>
-        </div>
-        <div class="tabla">
-            <h2>Turnos-Resultado Búsqueda</h2>
-            <ul class="responsive-table">
-                <li class="table-header">
-                    <div class="col col-1">Id</div>
-                    <div class="col col-2">Paciente</div>
-                    <div class="col col-3">Odontologo</div>
-                    <div class="col col-4">Eliminar</div>
-                </li>
-            </ul>
-        </div>
+        <h3>La página a la que intentaste acceder no existe o no tienes permiso para acceder a ella.</h3>
     </div>
 </main>
 <footer>
@@ -58,23 +39,22 @@
             <h4>Odontólogos</h4>
             <li><a href="./registroOdontolgos.html">Registrar</a></li>
             <li><a href="./buscarOdontologo.html">Buscar por ID</a></li>
-            <li><a href="./modificarOdontologos.html">Modificar</a></li>
+            <li><a href="#">Modificar</a></li>
         </ul>
         <ul class="menu-ul">
             <h4>Pacientes</h4>
             <li><a href="./registroPacientes.html">Registrar</a></li>
-            <li><a href="./buscarPaciente.html">Buscar por Apellido</a></li>
-            <li><a href="./modificarPacientes.html">Modificar</a></li>
+            <li><a href="./buscarPaciente.html">Buscar por ID</a></li>
+            <li><a href="#">Modificar</a></li>
         </ul>
         <ul class="menu-ul">
             <h4>Turnos</h4>
             <li><a href="./registroTurno.html">Registrar</a></li>
             <li><a href="./buscarTurno.html">Buscar por ID</a></li>
-            <li><a href="./modificarTurno.html">Modificar</a></li>
+            <li><a href="#">Modificar</a></li>
         </ul>
     </div>
     <h6>Clinica Odontologica - BackEnd Digital House</h6>
 </footer>
-<script src="/scripts/buscarTurno.js"></script>
 </body>
 </html>

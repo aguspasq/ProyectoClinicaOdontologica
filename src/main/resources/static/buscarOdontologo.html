@@ -1,80 +1,81 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="./styles/buscarOdontologo.css" rel="stylesheet" />
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link href="./styles/buscarOdontologo.css" rel="stylesheet"/>
     <link
-      href="https://fonts.googleapis.com/css?family=Lora:400,700|Montserrat:300"
-      rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Lora:400,700|Montserrat:300"
+            rel="stylesheet"
     />
     <title>Clinica Odontologica</title>
-  </head>
-  <body>
-    <header>
-      <nav>
+</head>
+<body>
+<header>
+    <nav>
         <div class="superior">
             <p>Sistema de Gestión- Clínica Odontologica</p>
-          </div>
-          <div class="inferior">
-              <h2><a href="/index.html">Clinica Odontologica</a></h2>
-          <ul class="menu">
-              <li class="seccion"><a href="listarPacientes.html">Pacientes</a></li>     
-              <li class="seccion"><a href="listarOdontologos.html">Odontologos</a></li>
-              <li class="seccion"><a href="listarTurnos.html">Turnos</a></li>
-          </ul>
-          </div>
-      </nav>
-    </header>
-    <main>
-      <div class="container">
+        </div>
+        <div class="inferior">
+            <h2><a href="/index.html">Clinica Odontologica</a></h2>
+            <ul class="menu">
+                <li class="seccion"><a href="logout">Salir</a></li>
+                <li class="seccion"><a href="listarPacientes.html">Pacientes</a></li>
+                <li class="seccion"><a href="listarOdontologos.html">Odontologos</a></li>
+                <li class="seccion"><a href="listarTurnos.html">Turnos</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<main>
+    <div class="container">
         <div class="menuLateral">
-          <h2>Menu</h2>
-          <h5>Buscar por Id</h5>
-          <form>
-            <input type="text" class="Id"/>
-            <h6 class="mensaje">Odontologo no encontrado</h6>
-            <input type="submit" id="buscar" class="buscar" value="Buscar">
-          </form>
+            <h2>Menu</h2>
+            <h5>Buscar por Id</h5>
+            <form>
+                <input class="Id" type="text"/>
+                <h6 class="mensaje">Odontologo no encontrado</h6>
+                <input class="buscar" id="buscar" type="submit" value="Buscar">
+            </form>
         </div>
         <div class="tabla">
-        <h2>Odontologos-Resultado Búsqueda</h2>
-        <ul class="responsive-table">
-          <li class="table-header">
-            <div class="col col-1">Id</div>
-            <div class="col col-2">Mat.</div>
-            <div class="col col-3">Nombre</div>
-            <div class="col col-4">Apellido</div>
-            <div class="col col-5">Eliminar</div>
-          </li>
-        </ul>
-      </div>
-      </div>
-    </main>
-    <footer>
-      <div class="menu-footer">
+            <h2>Odontologos-Resultado Búsqueda</h2>
+            <ul class="responsive-table">
+                <li class="table-header">
+                    <div class="col col-1">Id</div>
+                    <div class="col col-2">Mat.</div>
+                    <div class="col col-3">Nombre</div>
+                    <div class="col col-4">Apellido</div>
+                    <div class="col col-5">Eliminar</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</main>
+<footer>
+    <div class="menu-footer">
         <ul class="menu-ul">
-          <h4>Odontólogos</h4>
-          <li><a href="./registroOdontolgos.html">Registrar</a></li>
-          <li><a href="./buscarOdontologo.html">Buscar por ID</a></li>
-          <li><a href="./modificarOdontologos.html">Modificar</a></li>
-        </ul>
-        <ul class="menu-ul">
-          <h4>Pacientes</h4>
-          <li><a href="./registroPacientes.html">Registrar</a></li>
-          <li><a href="./buscarPaciente.html">Buscar por ID</a></li>
-          <li><a href="./modificarPacientes.html">Modificar</a></li>
+            <h4>Odontólogos</h4>
+            <li><a href="./registroOdontolgos.html">Registrar</a></li>
+            <li><a href="./buscarOdontologo.html">Buscar por ID</a></li>
+            <li><a href="./modificarOdontologos.html">Modificar</a></li>
         </ul>
         <ul class="menu-ul">
-          <h4>Turnos</h4>
-          <li><a href="./registroTurno.html">Registrar</a></li>
-          <li><a href="./buscarTurno.html">Buscar por ID</a></li>
-          <li><a href="./modificarTurno.html">Modificar</a></li>
+            <h4>Pacientes</h4>
+            <li><a href="./registroPacientes.html">Registrar</a></li>
+            <li><a href="./buscarPaciente.html">Buscar por Apellido</a></li>
+            <li><a href="./modificarPacientes.html">Modificar</a></li>
         </ul>
-      </div>
-        <h6>Clinica Odontologica - BackEnd Digital House</h6>
-      </footer>
-    <script src="/scripts/buscarOdontolgo.js"></script>
-  </body>
+        <ul class="menu-ul">
+            <h4>Turnos</h4>
+            <li><a href="./registroTurno.html">Registrar</a></li>
+            <li><a href="./buscarTurno.html">Buscar por ID</a></li>
+            <li><a href="./modificarTurno.html">Modificar</a></li>
+        </ul>
+    </div>
+    <h6>Clinica Odontologica - BackEnd Digital House</h6>
+</footer>
+<script src="/scripts/buscarOdontolgo.js"></script>
+</body>
 </html>

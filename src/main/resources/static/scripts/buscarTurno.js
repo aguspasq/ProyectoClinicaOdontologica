@@ -43,7 +43,7 @@ window.onload = function () {
                             );
                       
                             if (confirmacion) {
-                              fetch(`http://localhost:8081/pacientes/${idForm.value}`, {
+                              fetch(`http://localhost:8081/turnos/${idForm.value}`, {
                                 method: "DELETE",
                                 headers: {
                                   "Content-Type": "application/json",

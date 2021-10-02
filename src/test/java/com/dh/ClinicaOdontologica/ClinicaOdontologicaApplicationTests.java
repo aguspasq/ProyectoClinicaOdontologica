@@ -10,60 +10,58 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.Collection;
-import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SpringBootTest
 class ClinicaOdontologicaApplicationTests {
 
+    @Autowired
+    OdontologoServiceImpl odontologoService;
+    @Autowired
+    PacienteServiceImpl pacienteService;
 
-	@Autowired
-	OdontologoServiceImpl odontologoService;
-	@Autowired
-	PacienteServiceImpl pacienteService;
+    @Test
+    void contextLoads() {
 
-	@Test
-	void contextLoads() {
+        Odontologo odontologo = new Odontologo();
+        odontologo.setApellido("Pasqualis");
+        odontologo.setNombre("Agustina");
+        odontologo.setMatricula(1234);
 
-				Odontologo odontologo = new Odontologo();
-				odontologo.setApellido("Pasqualis");
-				odontologo.setNombre("Agustina");
-				odontologo.setMatricula(1234);
+        odontologoService.guardar(odontologo);
 
-				odontologoService.guardar(odontologo);
+        Collection<Odontologo> odontologos = odontologoService.listar();
+        boolean resultado = odontologos.size() > 0 && odontologos.size() < 2;
 
-				Collection<Odontologo> odontologos = odontologoService.listar();
-				boolean resultado = odontologos.size() > 0 && odontologos.size()<2;
+        assertTrue(resultado);
 
-				assertTrue(resultado);
+    }
 
-			}
+    @Test
+    public void test() {
 
-	@Test
-	public void test() {
+        Domicilio domicilio = new Domicilio();
+        domicilio.setProvincia("Cordoba");
+        domicilio.setLocalidad("Cordoba");
+        domicilio.setCalle("San Lorenzo");
+        domicilio.setNumero("47");
 
-		Domicilio domicilio = new Domicilio();
-		domicilio.setProvincia("Cordoba");
-		domicilio.setLocalidad("Cordoba");
-		domicilio.setCalle("San Lorenzo");
-		domicilio.setNumero("47");
+        Paciente paciente = new Paciente();
+        paciente.setDomicilio(domicilio);
+        paciente.setNombre("Agustina");
+        paciente.setApellido("Pasqualis");
+        paciente.setDni("32020854");
 
-		Paciente paciente = new Paciente();
-		paciente.setDomicilio(domicilio);
-		paciente.setNombre("Agustina");
-		paciente.setApellido("Pasqualis");
-		paciente.setDni("32020854");
+        pacienteService.guardar(paciente);
 
-		pacienteService.guardar(paciente);
+        Collection<Paciente> pacientes = pacienteService.listar();
 
-		Collection<Paciente> pacientes = pacienteService.listar();
+        boolean resultado = pacientes.size() > 0;
 
-		boolean resultado = pacientes.size()>0;
+        assertTrue(resultado);
 
-		assertTrue(resultado);
+    }
 
-	}
-
-	}
+}
 

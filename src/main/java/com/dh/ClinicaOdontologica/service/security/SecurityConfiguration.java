@@ -23,13 +23,16 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception{
         http
-            .csrf().disable()
-            .authorizeRequests()
-                .antMatchers("/user/**")
-                .permitAll()
-                .anyRequest()
-                .authenticated().and()
-                .formLogin();
+                .csrf().disable()
+                .authorizeRequests()
+                .antMatchers("/registroPacientes.html").hasAuthority("ADMIN")
+                .antMatchers("/registroOdontolgos.html").hasAuthority("ADMIN")
+                .anyRequest().authenticated()
+                .and()
+                .formLogin()
+                .and()
+                .logout();
+
     }
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {

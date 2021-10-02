@@ -2,17 +2,17 @@
     box-sizing: border-box;
     margin: 0;
   }
-  
+
   a:link,
   a:visited,
   a:active {
     text-decoration: none;
   }
-  
+
   body {
     font-family: "Lora", serif;
   }
-  
+
   h1,
   h2,
   h3,
@@ -24,11 +24,11 @@
     font-weight: 300;
     text-transform: uppercase;
   }
-  
+
   /* =================
   - HEADER
   ================= */
-  
+
   nav {
     background-color: rgba(255, 255, 255, 0.938);
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
@@ -40,7 +40,7 @@
     width: 100vw;
     z-index: 2;
   }
-  
+
   .superior {
     background-color: black;
     color: white;
@@ -51,18 +51,18 @@
     padding: 5px;
     padding-left: 90px;
   }
-  
+
   .inferior {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
   }
-  
+
   .inferior a {
     color: rgb(96, 144, 144);
   }
-  
+
   .menu {
     align-items: center;
     display: flex;
@@ -71,64 +71,64 @@
     margin-right: 50px;
     padding: 20px;
   }
-  
+
   .seccion {
     color: black;
     list-style: none;
     margin-left: 75px;
   }
-  
+
   .seccion :hover {
     border-bottom: 3px solid rgb(122, 128, 129);
     padding-bottom: 8px;
   }
-  
+
   .seccion a {
     color: black;
   }
-  
+
   /* =================
   - MAIN
   ================= */
-  
+
   .buscar {
     border: none;
     border-radius: 10px;
     font-family: "Montserrat", sans-serif;
     padding: 8px;
   }
-  
+
   .buscar:hover {
     background-color: gray;
   }
-  
+
   button {
     border: none;
     border-radius: 10px;
     font-family: "Montserrat", sans-serif;
     padding: 8px;
   }
-  
+
   button:hover {
     background-color: gray;
   }
-  
+
   main {
     margin-top: 150px;
     min-height: 300px;
   }
-  
+
   form{
     align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
-  
+
   .buscar{
     margin-top: 5px;
   }
-  
+
   .container {
     display: flex;
     flex-direction: row;
@@ -139,14 +139,14 @@
     padding-right: 10px;
     margin-bottom: 75px;
   }
-  
+
   .mensaje{
     background-color: #b0cacc;
     margin-top: 5px;
     padding: 5px;
     visibility: hidden;
   }
-  
+
   .menuLateral{
     align-items: center;
     display: flex;
@@ -155,14 +155,14 @@
     padding-right: 100px;
     width: 300px;
   }
-  
+
   .tabla{
     width: 850px;
     margin-left: auto;
     margin-right: auto;
     padding-left: 50px;
     margin-bottom: 75px;
-  
+
   }
   h2{
     font-size: 26px;
@@ -174,7 +174,7 @@
     margin-left: 60px;
     text-align: center;
   }
-  
+
   .responsive-table li {
     border-radius: 3px;
     padding: 25px 30px;
@@ -182,7 +182,7 @@
     justify-content: space-between;
     margin-bottom: 25px;
   }
-  
+
   .table-header {
     background-color: #b0cacc;
     font-size: 14px;
@@ -213,11 +213,11 @@
   .col-5{
     flex-basis: 10%;
   }
-  
+
   /* =================
   - FOOTER
   ================= */
-  
+
   footer {
     align-items: center;
     background-color: rgb(29, 31, 30);
@@ -227,11 +227,11 @@
     flex-direction: column;
     justify-content: flex-start;
   }
-  
+
   footer h4 {
     margin-bottom: 25px;
   }
-  
+
   .menu-footer {
     align-content: space-around;
     display: flex;
@@ -240,7 +240,7 @@
     justify-content: space-around;
     margin: 50px;
   }
-  
+
   .menu-ul {
     align-items: center;
     display: flex;
@@ -250,7 +250,7 @@
     margin-bottom: 50px;
     width: max-content;
   }
-  
+
   .menu-ul li {
     color: white;
     font-size: 0.8rem;
@@ -258,10 +258,9 @@
     text-decoration: none;
     margin-top: 5px;
   }
-  
+
   .menu-ul li a {
     color: white;
     list-style: none;
     text-decoration: none;
   }
-  

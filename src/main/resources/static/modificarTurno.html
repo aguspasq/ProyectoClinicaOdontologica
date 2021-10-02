@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="./styles/modificarOdontologos.css" rel="stylesheet" />
+    <meta charset="UTF-8"/>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link href="./styles/modificarOdontologos.css" rel="stylesheet"/>
     <link
             href="https://fonts.googleapis.com/css?family=Lora:400,700|Montserrat:300"
             rel="stylesheet"
@@ -20,6 +20,7 @@
         <div class="inferior">
             <h2><a href="/index.html">Clinica Odontologica</a></h2>
             <ul class="menu">
+                <li class="seccion"><a href="logout">Salir</a></li>
                 <li class="seccion">
                     <a href="listarPacientes.html">Pacientes</a>
                 </li>
@@ -36,9 +37,9 @@
         <h3>Menu</h3>
         <h5>Buscar por Id</h5>
         <form class="formBuscar">
-            <input type="text" class="Id"/>
+            <input class="Id" type="text"/>
             <h6 class="mensajeb">Turno no encontrado</h6>
-            <input type="submit" id="buscar" class="buscar" value="Buscar">
+            <input class="buscar" id="buscar" type="submit" value="Buscar">
         </form>
     </div>
     <div class="container">
@@ -48,30 +49,30 @@
             <form class="form">
                 <div>
                     <input
-                            type="text"
-                            name="odontologo"
                             class="odontologo"
-                            required
+                            name="odontologo"
                             placeholder=" "
+                            required
+                            type="text"
                     />
                     <label>Id Odontologo:</label>
                 </div>
                 <div>
-                    <input type="text" class="odontologoApellido" readonly>
+                    <input class="odontologoApellido" readonly type="text">
                     <label>Odontologo:</label>
                 </div>
                 <div>
-                    <input type="text" name="" class="paciente" required placeholder=" " />
+                    <input class="paciente" name="" placeholder=" " required type="text"/>
                     <label>Id Paciente:</label>
                 </div>
                 <div>
-                    <input type="text" class="pacienteApellido" readonly>
+                    <input class="pacienteApellido" readonly type="text">
                     <label> Paciente:</label>
                 </div>
                 <div>
                     <input
-                            type="datetime-local" class="fecha"
-                            name="fecha"
+                            class="fecha" name="fecha"
+                            type="datetime-local"
                     />
                     <label>Fecha y Hora: </label>
                 </div>
@@ -93,7 +94,7 @@
         <ul class="menu-ul">
             <h4>Pacientes</h4>
             <li><a href="./registroPacientes.html">Registrar</a></li>
-            <li><a href="./buscarPaciente.html">Buscar por ID</a></li>
+            <li><a href="./buscarPaciente.html">Buscar por Apellido</a></li>
             <li><a href="./modificarPacientes.html">Modificar</a></li>
         </ul>
         <ul class="menu-ul">

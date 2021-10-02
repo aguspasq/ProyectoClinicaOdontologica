@@ -11,8 +11,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
+import org.thymeleaf.util.DateUtils;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 
 @Slf4j
@@ -27,6 +31,7 @@ public class TurnoController {
     private PacienteServiceImpl pacienteService;
     @Autowired
     private OdontologoServiceImpl odontologoService;
+
 
     @PostMapping("/registrar")
     public ResponseEntity<Turno> registrarTurno(@RequestBody Turno turno){
@@ -70,7 +75,7 @@ public class TurnoController {
 
         if (turnoService.buscarPorId(id).isPresent()) {
             turnoService.eliminar(id);
-            response = ResponseEntity.status(HttpStatus.NO_CONTENT).body("Eliminado");
+            response = ResponseEntity.status(HttpStatus.OK).body("Eliminado");
             log.debug("Eliminando Turno");
         } else {
             response = ResponseEntity.status(HttpStatus.NOT_FOUND).body("Registro no encontrado");
@@ -85,4 +90,5 @@ public class TurnoController {
         log.debug("Listando todos los Turnos.");
         return ResponseEntity.ok(turnoService.listar());
     }
+
 }

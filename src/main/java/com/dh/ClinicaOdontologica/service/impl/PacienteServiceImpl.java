@@ -39,7 +39,7 @@ public class PacienteServiceImpl implements IService<Paciente> {
         return pacienteRepository.findById(id);
     }
 
-
+    @Transactional(readOnly = true)
     public List<Paciente> buscarPacienteByApellido(String apellido){
         List<Paciente> pacientes = pacienteRepository.buscarPacienteByApellido(apellido);
         return pacientes;

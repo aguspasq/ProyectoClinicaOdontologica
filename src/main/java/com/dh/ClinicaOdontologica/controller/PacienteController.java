@@ -52,14 +52,14 @@ public class PacienteController {
     }
 
     @DeleteMapping("/{id}")
-    @Transactional
     public ResponseEntity<String> eliminar(@PathVariable Long id) {
+        log.debug("Eliminando Odontologo");
         ResponseEntity<String> response = null;
 
         if (pacienteService.buscarPorId(id).isPresent()) {
             pacienteService.eliminar(id);
-            response = ResponseEntity.status(HttpStatus.NO_CONTENT).body("Eliminado");
-            log.debug("Eliminando Odontologo");
+            response = ResponseEntity.status(HttpStatus.OK).body("Eliminado");
+
         } else {
             response = ResponseEntity.status(HttpStatus.NOT_FOUND).body("Registro no encontrado");
             log.debug("Paciente no encontrado");
